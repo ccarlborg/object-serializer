@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>info.carlborg</groupId>
+  <artifactId>object-serializer</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>object-serializer</name>
+  <url>https://github.com/ccarlborg/object-serializer</url>
+  <description>Serialize Java objects into strings using pluggable strategies for serialization, compression, encryption and encoding</description>
+
+  <licenses>
+    <license>
+      <name>MIT-style license</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/ccarlborg/object-serializer/tree/master</url>
+    <connection>scm:git:git@github.com:ccarlborg/object-serializer.git</connection>
+    <developerConnection>scm:git:git@github.com:ccarlborg/object-serializer.git</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>ccarlborg</id>
+      <name>Christoffer Carlborg</name>
+      <email>christoffer@carlborg.info</email>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <name>Nexus Release Repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+    </repository>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Surefire plugin required by JUnit -->
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.2</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.9.1</version>
+        </plugin>
+
+        <plugin>
+          <groupId>net.revelc.code.formatter</groupId>
+          <artifactId>formatter-maven-plugin</artifactId>
+          <version>2.13.0</version>
+          <configuration>
+            <configFile>${project.basedir}/style/eclipse-style.xml</configFile>
+            <encoding>UTF-8</encoding>
+            <compilerCompliance>1.8</compilerCompliance>
+            <compilerSource>1.8</compilerSource>
+            <compilerTargetPlatform>1.8</compilerTargetPlatform>
+            <lineEnding>LF</lineEnding>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.5</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
