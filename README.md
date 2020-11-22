@@ -88,6 +88,11 @@ The core library provides a set of strategies that only depend on the Java stand
 |------|-------------|
 | ![Base64EncodeStrategy](/src/main/java/info/carlborg/serializer/encode/Base64EncodeStrategy.java) | Encode the encrypted byte array into a base64 encoded string. |
 
+## Other available strategies
+
+| Name                 | Description |
+|----------------------|-------------|
+| ![FstSerializeStrategy](https://github.com/ccarlborg/object-serializer-fst) | Serialize the object into a byte array using the fast and efficient [FST object serializer](https://github.com/RuedigerMoeller/fast-serialization). Recommended. |
 
 ## Implementing your own strategy
 
